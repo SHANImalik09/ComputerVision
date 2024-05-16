@@ -3,39 +3,6 @@ import cvzone
 from ultralytics import YOLO
 from Sort import *
 model = YOLO("C:\\Users\\intel\\PycharmProjects\\pythonProject\\AI\\INTERNSHIP\\yoloweights\\yolov8n.pt")
-
- #                   detection object in the image
-
-# img = cv2.imread(r"C:\Users\intel\PycharmProjects\pythonProject\AI\INTERNSHIP\istockphoto-518590341-612x612.jpg")
-# result = model(img,show = True)
-# cv2.waitKey(0)
-
-#                       detection object in the webcam
-# cap = cv2.VideoCapture(0)
-# cap.set(3,640)
-# cap.set(4,480)
-# Classname = ['person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat', 'traffic light', 'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse', 'sheep', 'cow', 'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee', 'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat', 'baseball glove', 'skateboard', 'surfboard', 'tennis racket', 'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon', 'bowl', 'banana', 'apple', 'sandwich', 'orange', 'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake', 'chair', 'couch', 'potted plant', 'bed', 'dining table', 'toilet', 'tv', 'laptop', 'mouse', 'remote', 'keyboard', 'cell phone', 'microwave', 'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush']
-# while True:
-#      ret,frame = cap.read()
-#
-#      result = model(frame, stream=True)
-#      for r in result:
-#          Boxes = r.boxes
-#          for box in Boxes:
-#            x1, y1, x2, y2 = box.xyxy[0]
-#
-#            x1,y1,x2,y2 = int(x1),int(y1),int(x2),int(y2)
-#            w, h = x2 - x1, y2 - y1
-#            confidence = (int(box.conf[0]*100))/100
-#            cls = int(box.cls[0])
-#            print(confidence)
-#            print(cls)
-#            cvzone.cornerRect(frame, (x1,y1,w,h))
-#            cvzone.putTextRect(frame, f'{Classname[cls]},{confidence}',(max(0,x1),max(35,y1)),scale=1.5,thickness=1)
-#
-#      cv2.imshow("Detected Objects", frame)
-#      if cv2.waitKey(1) & 0xFF == ord('q'):
-#          break
 #                           car detection  in video
 cap = cv2.VideoCapture("C:\\Users\\intel\\PycharmProjects\\pythonProject\\AI\\INTERNSHIP\\WhatsApp Video 2024-04-03 at 2.16.39 PM.mp4")
 frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
